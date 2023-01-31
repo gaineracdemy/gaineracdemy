@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+
+* {
+    margin: 0;
+    pad: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('img/contractBG.png');
+    /* background-repeat: no-repeat; */
+    background-size: 100% auto;
+}
+
+
+
+
+.mainheader {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.mainheader .logo img {
+
+  filter: blur(0px); 
+  width: 100%;
+  height: 300px;
+  padding-left: 0px;
+  margin-top: 70px;
+  cursor: pointer;
+}
+
+.menubtn {
+  margin-right: 60px;
+}
+
+.mainheader button {
+  padding: 10px 30px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 550;
+  color: rgb(0, 0, 0);
+  border: none;
+  background-image: linear-gradient(to right, #64ffc1, #1eb0e1, #4cc2ca);
+  border-radius: 15px;
+  padding-left: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all  0.5s ease;
+}
+
+.mainheader button:hover {
+  box-shadow: 0 4px 14px 0 rgba(40, 230, 240, 0.92), 0 16px 10px 0 rgba(62, 126, 230, 0.495);
+}
+
+/* Working on the NAV Bar  */
+
+/* Clearing floats */
+.cf:before,
+.cf:after {
+content: " ";
+display: table;
+}
+
+.cf:after {
+clear: both;
+}
+
+.cf {
+*zoom: 1;
+}
+
+/* Mini reset, no margins, paddings or bullets */
+.menu,
+.submenu {
+margin: 0;
+padding: 0;
+list-style: none;
+z-index: 1; 
+
+}
+
+/* Main level */
+.menu {			
+margin: 50px auto;
+width: 800px;
+/* http://www.red-team-design.com/horizontal-centering-using-css-fit-content-value */
+width: -moz-fit-content;
+width: -webkit-fit-content;
+width: fit-content;	
+}
+
+.menu > li {
+background: #00000073;
+float: left;
+position: relative;
+transform: skewX(25deg);
+box-shadow: 1px 3px 10px rgb(255, 255, 255);
+border-radius: 9px;
+}
+
+.menu a {
+display: block;
+color: #fff;
+text-transform: capitalize;
+text-decoration: none;
+font-family: Arial, Helvetica;
+font-size: 15px;
+font-weight: bold;
+
+}		
+
+
+.menu li:hover {
+text-decoration: none;
+color: black;
+opacity: 1;
+background-color: #8ec5fc00;
+background-image: linear-gradient(62deg, #494cf7c4 0%, #ffbb918e 100%);
+}		
+
+.menu > li:hover > ul {
+display: block;
+}
+
+.menu > li > a {
+transform: skewX(-25deg);
+padding: 1em 2em;
+}
+
+/* Dropdown */
+.submenu {
+position: absolute;
+width: 200px;
+left: 50%; margin-left: -100px;
+transform: skewX(-25deg);
+transform-origin: left top;
+
+}
+
+.submenu li {
+color: black;
+background-image: linear-gradient(to right, #3c88d4d6, #1eb0e1bc, #4cc2cade);
+position: relative;
+border-radius: 9px;		
+overflow: hidden;	
+}						
+
+.submenu > li > a {
+padding: 1em 2em;			
+}
+
+.submenu > li::after {
+content: '';
+position: absolute;
+top: -125%;
+height: 100%;
+width: 100%;			
+box-shadow: 0 0 50px rgba(255, 255, 255, 0.9);	
+}		
+
+/* Odd stuff */
+.submenu > li:nth-child(odd){
+transform: skewX(-25deg) translateX(0);
+}
+
+.submenu > li:nth-child(odd) > a {
+transform: skewX(25deg);
+}
+
+.submenu > li:nth-child(odd)::after {
+right: -50%;
+transform: skewX(-25deg) rotate(3deg);
+}				
+
+/* Even stuff */
+.submenu > li:nth-child(even){
+transform: skewX(25deg) translateX(0);
+}
+
+.submenu > li:nth-child(even) > a {
+transform: skewX(-25deg);
+}
+
+.submenu > li:nth-child(even)::after {
+left: -50%;
+transform: skewX(25deg) rotate(3deg);
+}
+
+/* Show dropdown */
+.submenu,
+.submenu li {
+opacity: 0;
+visibility: hidden;	
+}
+
+.submenu li {
+transition: 0.3s ease-out transform;
+}
+
+.menu > li:hover .submenu,
+.menu > li:hover .submenu li {
+opacity: 1;
+visibility: visible;
+}		
+
+.menu > li:hover .submenu li:nth-child(even){
+transform: skewX(25deg) translateX(15px);			
+}
+
+.menu > li:hover .submenu li:nth-child(odd){
+transform: skewX(-25deg) translateX(-15px);			
+}
+
+
+.card-container {
+    margin-top: 90px;
+    overflow: hidden; /* added this */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 300px; /* increased width */
+    height: 200px;
+    margin: 20px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    cursor: pointer;
+  }
+  
+  .card .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    text-align: center;
+    line-height: 150px;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: #ddd;
+    border-radius: 10px;
+    box-shadow: 6px 6px 6px rgb(197, 189, 189), -2px -2px 8px #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+
+  }
+  
+  .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #ddd;
+    border-radius: 10px;
+    box-shadow: 6px 6px 6px #ccc, -2px -2px 8px #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .card:hover{
+    transform: rotateY(180deg) translatey(-20px);
+  
+  }
+  
+
+  .back p {
+    margin: 5px 0;
+    word-wrap: break-word;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+/*  Our Team Section  */
+
+  .address {
+    color: rgb(7, 93, 115);
+    font-size: 10px;
+  }
+  .contact-no {
+    color: rgb(182, 45, 0);
+    font-size: 10px;
+  }
+  .email {
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+  }
+  .manager {
+    color: rgb(11, 19, 255);
+    font-size: 24px;
+  }
+  
+  .team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+  }
+  
+  .circle-photo {
+    border-radius: 50%;
+    border: none;
+    width: 125px;
+    height: 125px;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  
+  }
+  .circle-photo:hover {
+    transform: translatey(-20px);
+  }
+  
+  .name-box {
+    color: white;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 15px;
+  }
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+/* Animations of Hero Titles  */
+
+  .hero {
+    position: relative;
+  }
+  .hero-title {
+    animation: title-animation 2s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("path/to/background.jpg");
+    background-size: cover;
+  }
+  
+  .hero-bg-blur {
+    position: absolute;
+    top: 15px;
+    width: 65%;
+    height: 90%;
+    border-radius: 150px;
+    background-color: rgba(0, 0, 0, 0.323);
+    filter: blur(15px);
+    animation: blur-animation 5s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+  }
+  
+  .hero-title {
+    position: relative;
+    z-index: 1;
+    animation: title-animation 2s ease-in-out;
+  }
+  
+  @keyframes title-animation {
+    0% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes blur-animation {
+    0%{
+        opacity: 0;
+    }
+    100% {
+      filter: blur(5px);
+    }
+  }
+
+  /*  Gradient Text Animation  */
+
+.container-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero-content h1 {
+  text-transform: uppercase;
+	background-image: linear-gradient(to right top, #46ddff, #30ff0cda, #f5ec43, #eac362, #f51033);
+  background-size: 50% auto;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  font-size: 8vw;
+  animation: gradientAnim 7.5s ease  alternate infinite;
+}
+
+
+@keyframes gradientAnim {
+  to {
+    background-position: 100% top;
+
+  }
+}
