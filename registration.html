@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <div id="preloader"></div>
+
     <header>
         <div class="mainheader">
             <div class="logo" style="z-index: 10;">
@@ -41,7 +43,7 @@
     <div class="registraionarea">
       <div class="login-box"  id="style-7">
         <h2>Regristration For Free</h2>
-        <form name="google-sheet" id="formId">
+        <form name="google-sheet" id="formId" onsubmit="alert('Thanks for the Registraion.! We Will Contact You Soon...'); window.location.href='index.html';">
           <div class="user-box">
             <input type="text" name="fullname" required="This field is required">
             <label>Full Name</label>
@@ -85,7 +87,7 @@
             </p>
 
     
-          <a href="#" >
+          <a href="index.html" >
             <span></span>
             <span></span>
             <span></span>
@@ -221,15 +223,21 @@
               <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
             </svg>
             <label for="Primary" style="position: relative; top: -30px; margin-left: 50px;">Primary_School_Coaching</label>
-          </div>
-          
+          </div>   
 
-          
         </form>
       </div>
     </div>
 
   <script>
+      window.addEventListener("load", function() {
+          const preloader = document.getElementById("preloader");
+          preloader.style.display = "none";          
+          setTimeout(function() {
+              preloader.style.display = "none";
+            }, 300);
+        });
+
       function updateInput() {
         let values = [];
         if (document.getElementById("Sr.Sec ").checked) {
@@ -274,13 +282,15 @@
 
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxGr7XK47a4sAs3zcnQKqNjIQdosd3fDFo1gWmVNqbDpveK99O9resEjtyPUgRR-ZXy/exec'
       const form = document.forms['google-sheet']
-    
       form.addEventListener('submit', e => {
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-          .catch(error => console.error('Error!', error.message))
-      })
+        .then(response => {
+          alert("Thanks for Contacting us..! We Will Contact You Soon...");
+          document.querySelector("input[type='submit']").setAttribute("disabled", "disabled");
+        })
+        .catch(error => console.error('Error!', error.message));
+        });
     </script>
 
 

@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <div id="preloader"></div>
+
     <header>
         <div class="mainheader">
             <div class="logo">
@@ -53,7 +55,16 @@
       </div>
 
     </div>
+    <script>
+      window.addEventListener("load", function() {
+        const preloader = document.getElementById("preloader");
+        preloader.style.display = "none";
+        setTimeout(function() {
+              preloader.style.display = "none";
+            }, 300);
+      });
 
+    </script>  
 </body>
 <footer style="width: 100%; position: absolute; bottom: -20px; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);" class="text-white  body-font">
   <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">

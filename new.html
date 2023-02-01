@@ -7,6 +7,8 @@
 </head>
 
 <body>
+  <div id="preloader"></div>
+
   <header>
     <div class="mainheader">
         <div class="logo">
@@ -109,7 +111,12 @@
 
     </div>
     
-
+    <script>
+      window.addEventListener("load", function() {
+        const preloader = document.getElementById("preloader");
+        preloader.style.display = "none";
+      });
+    </script>  
 
 </body>
 

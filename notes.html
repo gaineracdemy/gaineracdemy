@@ -8,6 +8,8 @@
 </head>
 
 <body>
+   <div id="preloader"></div>
+
     <header>
         <div class="mainheader">
             <div class="logo">
@@ -41,6 +43,13 @@
         <div style=" border-radius: 20px; backdrop-filter: blur(5px);"  class="glitch-trans" data-glitch="glitch"> We Have No Vacant Posts <br> For Now </div>
       </div> -->
       <script>
+        window.addEventListener("load", function() {
+          const preloader = document.getElementById("preloader");
+          preloader.style.display = "none";
+          setTimeout(function() {
+              preloader.style.display = "none";
+            }, 300);
+        });
       </script>  
 
 </body>
