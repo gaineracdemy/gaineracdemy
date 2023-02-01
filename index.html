@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <div id = "preloader"></div>
     <header>
         <div class="mainheader">
             <div class="logo">
@@ -213,6 +214,11 @@
       </section>
 
       <script>
+          
+         window.addEventListener("load", function() {
+          const preloader = document.getElementById("preloader");
+          preloader.style.display = "none";
+        });
         const sections = document.querySelectorAll('.animate-section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
