@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gainers Academy</title>
+    <link rel="stylesheet" type="text/css" href="registration.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="preloader"></div>
+
+    <header>
+        <div class="mainheader">
+            <div class="logo" style="z-index: 10;">
+                <img src="img/logo5 copy.png">
+            </div>
+            <ul class="menu cf">
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="">Student Corner</a>
+                <ul class="submenu">
+                  <li><a href="course.html">Course Details</a></li>
+                  <li><a href="notes.html">Notes</a></li>
+                  <li><a href="videolecture.html">Video Lectures</a></li>
+                  <li><a href="mocktest.html">Mock Tests</a></li>
+                  <li><a href="event.html">Events</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                </ul>			
+              </li>
+              <li><a href="job.html">Jobs</a></li>
+              <li><a href="notifications.html">Notifications</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+           <div class="menubtn" >
+              <a  href = 'registration.html'>
+                <!-- <button>Registration</button> -->
+              </a>
+            </div> 
+    </header>
+
+
+    <div class="registraionarea">
+      <div class="login-box"  id="style-7">
+        <h2>Regristration For Free</h2>
+        <form name="google-sheet" id="formId" onsubmit="alert('Thanks for the Registraion.! We Will Contact You Soon...'); window.location.href='index.html';">
+          <div class="user-box">
+            <input type="text" name="fullname" required="This field is required">
+            <label>Full Name</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="email" required="This field is required">
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input min="10" id="quantity" type="number" name="phone" required="This field is required">
+            <label style="margin-left:0% ;">Phone No.</label>
+          </div>
+          <div class="user-box">
+            <input type="date" name="dob" required="">
+            <label style="margin-left: 30%">Date of Birth</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="address" required="">
+            <label>Address</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="currentclass" required="">
+            <label>Your Current Class</label>
+          </div>
+
+          <div class="user-box">
+            <input type="text" name="yourcourse" id="input"  required="">
+            <label>Select Courses</label>
+          </div>
+          
+          
+          <p>
+              <label style="color: white; margin: 10px"> Gender</label>
+          </p>
+            <p>
+              <input value="Male" style="color: white; margin: 5px" type="radio" id="test2" name="gender">
+              <label style="color: white; margin: 20px" for="test2">Male</label>
+              <input value="Female" style="color: white; margin: 5px" type="radio" id="test3" name="gender">
+              <label style="color: white; margin: 10px" for="test3" class="female-label">Female</label>
+              
+            </p>
+
+    
+          <a href="index.html" >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <input type="submit" value="Submit" style=" padding: 10px 20px; cursor: pointer; font-size: 16px; letter-spacing: 4px; text-decoration: none; text-transform: uppercase;">
+          </a> 
+          <a style = " margin-left: 55px;" class="resetbtn" href="#" >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <input type="reset" value="reset" style=" padding: 10px 20px; cursor: pointer; font-size: 16px; letter-spacing: 4px; text-decoration: none; text-transform: uppercase;">
+          </a> 
+
+        </form>
+      </div>
+
+      <div class="card">
+        <h1 style="text-align: center; font-size: 1.5em;">Select Your Course</h1> 
+        
+        <form id="form1" style=" display: flex;  flex-direction: column;">
+          <div class="checkbox-wrapper-31" >
+            <input type="checkbox" id="Sr.Sec " onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="Sr.Sec " style="position: relative; top: -30px; margin-left: 50px;">11th_12th_Coaching</label>
+          </div>
+
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" id="High School" onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="High School" style="position: relative; top: -30px; margin-left: 50px;">8th_10th_Coaching</label>
+          </div>
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" id="JEE" onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="JEE" style="position: relative; top: -30px; margin-left: 50px;">JEE</label>
+          </div>
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" id="NEET" onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="NEET" style="position: relative; top: -30px; margin-left: 50px;">NEET</label>
+          </div>
+          
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" id="Job" onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="Job" style="position: relative; top: -30px; margin-left: 50px;">Job_Entrance(HSSC,_SSC,_Banking,_etc.)</label>
+          </div>
+          
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" id="HAU" onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="HAU" style="position: relative; top: -30px; margin-left: 50px;">(HAU)_Entrance</label>
+          </div>
+          
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" id="Programing" onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="Programing" style="position: relative; top: -30px; margin-left: 50px;">Programing_Languages_Courses</label>
+          </div>
+          
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" id="BasicComputer" onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="BasicComputer" style="position: relative; top: -30px; margin-left: 50px;">Basic_Computer_Courses</label>
+          </div>
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" id="AdvanceComputer" onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="AdvanceComputer" style="position: relative; top: -30px; margin-left: 50px;">Advance_Computer_Courses</label>
+          </div>
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" id="JNV" onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="JNV" style="position: relative; top: -30px; margin-left: 50px;">JNV</label>
+          </div>
+          
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" id="NMMS" onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="NMMS" style="position: relative; top: -30px; margin-left: 50px;">NMMS</label>
+          </div>
+          
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" id="Primary" onclick="updateInput()">
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+            </svg>
+            <label for="Primary" style="position: relative; top: -30px; margin-left: 50px;">Primary_School_Coaching</label>
+          </div>   
+
+        </form>
+      </div>
+    </div>
+
+  <script>
+      window.addEventListener("load", function() {
+          const preloader = document.getElementById("preloader");
+          preloader.style.display = "none";          
+          setTimeout(function() {
+              preloader.style.display = "none";
+            }, 300);
+        });
+
+      function updateInput() {
+        let values = [];
+        if (document.getElementById("Sr.Sec ").checked) {
+          values.push("Sr.Sec ");
+        }
+        if (document.getElementById("High School").checked) {
+          values.push("High School");
+        }
+        if (document.getElementById("JEE").checked) {
+          values.push("JEE");
+        }
+        if (document.getElementById("NEET").checked) {
+          values.push("NEET");
+        }
+        if (document.getElementById("Job").checked) {
+          values.push("Job");
+        }
+        if (document.getElementById("HAU").checked) {
+          values.push("HAU");
+        }
+        if (document.getElementById("Programing").checked) {
+          values.push("Programing");
+        }
+        if (document.getElementById("BasicComputer").checked) {
+          values.push("BasicComputer");
+        }
+        if (document.getElementById("AdvanceComputer").checked) {
+          values.push("AdvanceComputer");
+        }
+        if (document.getElementById("JNV").checked) {
+          values.push("JNV");
+        }
+        if (document.getElementById("NMMS").checked) {
+          values.push("NMMS");
+        }
+        if (document.getElementById("Primary").checked) {
+          values.push("Primary");
+        }
+
+        document.getElementById("input").value = values.join(", ");
+      }
+
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxGr7XK47a4sAs3zcnQKqNjIQdosd3fDFo1gWmVNqbDpveK99O9resEjtyPUgRR-ZXy/exec'
+      const form = document.forms['google-sheet']
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          alert("Thanks for Contacting us..! We Will Contact You Soon...");
+          document.querySelector("input[type='submit']").setAttribute("disabled", "disabled");
+        })
+        .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+
+
+
+</body>
+<footer style="margin-top: 100px; width: 100%; position: relative; bottom: -10px; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);" class="text-white  body-font">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+      <img style="border-radius: 70px; height: 70px; width: 70px; " src="img/logo7.png" >
+      <span class="ml-3 text-xl">Gainers Academy</span>
+    </a>
+    <p class="text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-white sm:py-2 sm:mt-0 mt-4">© 2023 Gainers Academy —
+      <a href="https://www.linkedin.com/in/rajiv-singh-633959206/" class="text-white ml-1" rel="noopener noreferrer" target="_blank">@Rajiv Singh</a>
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <a class="text-blue-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-blue-400">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-pink-500">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-indigo-500">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+      </a>
+    </span>
+  </div>
+</footer>
+</html>

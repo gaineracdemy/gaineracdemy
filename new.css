@@ -1,0 +1,227 @@
+html { height: 100%; }
+
+body { 
+  background: #333; 
+  text-align: center;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 { font-size: 20vw; }
+
+.linear-wipe {
+  text-align: center;
+  background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 1s linear infinite;
+  }
+  
+
+@keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+/* Floating Card of Hero Title  */
+/* h1 { font-size: 4vw;
+   } */
+
+   .linear-wipe {
+    text-align: center;
+    background: linear-gradient(to right, rgba(253, 249, 249, 0.927) 20%, rgb(94, 193, 246) 40%, rgb(208, 247, 98) 60%, #ff3ab4 70%);
+    background-size: 200% auto;
+    color: #000;
+    margin-top: 15px;
+    font-size: xx-large;
+    font-family:verdana Geneva;
+    background-clip: text;
+    -text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite;
+    }
+    
+  @keyframes shine {to {background-position: 200% center;}}
+  
+  
+  
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900%display=swap');
+  
+  /* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+  /* CSS for styling the form */
+  form {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    padding: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+  }
+  /* CSS for styling form elements */
+  input[type="text"], input[type="email"], input[type="date"], input[type="tel"] {
+    width: 48%;
+    margin: 10px 1%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+  }
+  select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  /* CSS for styling the radio buttons and labels */
+  .gender-container {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+  }
+  .gender-container input[type="radio"] {
+    margin-right: 10px;
+  }
+  /* CSS for styling the checkboxes and labels */
+  .course-container {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .course-container input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  /* CSS for styling the submit button */
+  input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  :root {
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+  
+  
+  /* body {
+    min-height: 100vh;
+    background: #212534;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+  } */
+  
+  
+  .card {
+    background: #191c29;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 10px;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+    font-family: cursive;
+  }
+  
+  /* .card:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+  } */
+  /* .card:hover:before, .card:hover:after {
+    animation: none;
+    opacity: 0;
+  } */
+  
+  
+  .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  
+  a {
+    color: #212534;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 2rem;
+  }

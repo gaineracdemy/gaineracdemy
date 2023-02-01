@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    pad: 0;
+    box-sizing: border-box;
+
+}
+
+#preloader{
+  background: #000 url('img/AtomGif.gif') no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('img/jobBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.mainheader {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.mainheader .logo img {
+
+    filter: blur(0px); 
+    width: 100%;
+    height: 300px;
+    padding-left: 0px;
+    margin-top: 70px;
+    cursor: pointer;
+}
+
+.menubtn {
+    margin-right: 60px;
+}
+
+
+.mainheader button {
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 550;
+    color: white;
+    border: none;
+    background-image: linear-gradient(to right, #649bff, #0070fa, #649bff);
+    border-radius: 15px;
+    padding-left: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.45s;
+}
+
+.mainheader button:hover {
+    box-shadow: 0 4px 14px 0 rgb(173, 215, 255), 0 16px 10px 0 rgba(50, 140, 251, 0.493);
+}
+
+/* Working on the NAV Bar  */
+
+/* Clearing floats */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* Mini reset, no margins, paddings or bullets */
+.menu,
+.submenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 1; 
+
+}
+
+/* Main level */
+.menu {			
+  margin: 50px auto;
+  width: 800px;
+  /* http://www.red-team-design.com/horizontal-centering-using-css-fit-content-value */
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;	
+}
+
+.menu > li {
+  background: #00000073;
+  float: left;
+  position: relative;
+  transform: skewX(25deg);
+  box-shadow: 1px 3px 10px rgb(255, 255, 255);
+  border-radius: 9px;
+
+
+}
+
+.menu a {
+  display: block;
+  color: #fff;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-family: Arial, Helvetica;
+  font-size: 15px;
+  font-weight: bold;
+  
+}		
+
+
+.menu li:hover {
+  text-decoration: none;
+  opacity: 1;
+  background-color: #F8EDD7;
+  background-image: linear-gradient(62deg, #f5404088 0%, #f1cf86a9 100%);
+}		
+.menu li a:hover {
+  color: black;
+}	
+
+.menu > li:hover > ul {
+  display: block;
+}
+
+.menu > li > a {
+  transform: skewX(-25deg);
+  padding: 1em 2em;
+
+}
+
+/* Dropdown */
+.submenu {
+  position: absolute;
+  width: 200px;
+  left: 50%; margin-left: -100px;
+  transform: skewX(-25deg);
+  transform-origin: left top;
+  
+}
+
+.submenu li {
+  background-image: linear-gradient(62deg, #368eebbb 0%, #342dfd94 100%);
+  position: relative;
+  border-radius: 9px;		
+  overflow: hidden;	
+}						
+
+.submenu > li > a {
+  padding: 1em 2em;			
+}
+
+.submenu > li::after {
+  content: '';
+  position: absolute;
+  top: -125%;
+  height: 100%;
+  width: 100%;			
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.9);	
+}		
+
+/* Odd stuff */
+.submenu > li:nth-child(odd){
+  transform: skewX(-25deg) translateX(0);
+}
+
+.submenu > li:nth-child(odd) > a {
+  transform: skewX(25deg);
+}
+
+.submenu > li:nth-child(odd)::after {
+  right: -50%;
+  transform: skewX(-25deg) rotate(3deg);
+}				
+
+/* Even stuff */
+.submenu > li:nth-child(even){
+  transform: skewX(25deg) translateX(0);
+}
+
+.submenu > li:nth-child(even) > a {
+  transform: skewX(-25deg);
+}
+
+.submenu > li:nth-child(even)::after {
+  left: -50%;
+  transform: skewX(25deg) rotate(3deg);
+}
+
+/* Show dropdown */
+.submenu,
+.submenu li {
+  opacity: 0;
+  visibility: hidden;	
+  		
+}
+
+.submenu li {
+  transition: 0.3s ease-out transform;
+}
+
+.menu > li:hover .submenu,
+.menu > li:hover .submenu li {
+  opacity: 1;
+  visibility: visible;
+}		
+
+.menu > li:hover .submenu li:nth-child(even){
+  transform: skewX(25deg) translateX(15px);			
+}
+
+.menu > li:hover .submenu li:nth-child(odd){
+  transform: skewX(-25deg) translateX(-15px);			
+}
+
+
+/* Liner Wipe Text Animation  */
+
+.linear-wipe {
+  text-align: center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.927) 20%, rgb(36, 160, 227) 40%, rgb(185, 246, 17) 60%, #28870E 70%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  -text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 100px; 
+  font-weight: bolder;
+  animation: shine 5s linear infinite;
+  }
+  
+@keyframes shine {to {background-position: 200% center;}}
+
+
+
+
+.glitch-wrapper {
+  width: 100%;
+  height:50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background-color: #0070fa; */
+  top: 0px;
+}
+
+.glitch {
+  position: relative;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(16, 16, 16);
+  letter-spacing: 5px;
+  z-index: 1;
+}
+
+
+/* Glitch with Transformation */
+
+.glitch-trans {
+  position: relative;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(0, 0, 0);
+  letter-spacing: 5px;
+  animation: shift 4s ease-in-out infinite alternate;
+  transform: skewX(0deg);
+  z-index: 1;
+}
+
+@keyframes shift {
+  0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100% {
+     transform: skewX(0deg);
+  }
+
+  41% {
+     transform: skewX(10deg);
+  }
+
+  42% {
+     transform: skewX(-10deg);
+  }
+
+  59% {
+     transform: skewX(40deg) skewY(10deg);
+  }
+
+  60% {
+     transform: skewX(-40deg) skewY(-10deg);
+  }
+
+  63% {
+     transform: skewX(10deg) skewY(-5deg);
+  }
+
+  70% {
+     transform: skewX(-50deg) skewY(-20deg);
+  }
+
+  71% {
+     transform: skewX(10deg) skewY(-10deg);
+  }
+}
+
+
+.footer {
+  background-color: #000;
+}

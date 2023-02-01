@@ -1,0 +1,468 @@
+* {
+    margin: 0;
+    pad: 0;
+    box-sizing: border-box;
+
+}
+
+#preloader{
+  background: rgb(0, 0, 0) url('img/AtomGif.gif') no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('img/Bg1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.mainheader {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.mainheader .logo img {
+
+    filter: blur(0px); 
+    width: 100%;
+    height: 300px;
+    padding-left: 0px;
+    margin-top: 70px;
+    cursor: pointer;
+}
+
+.menubtn {
+    margin-right: 60px;
+}
+
+
+.mainheader button {
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 550;
+    color: white;
+    border: none;
+    background-image: linear-gradient(to right, #649bff, #0070fa, #649bff);
+    border-radius: 15px;
+    padding-left: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.45s;
+}
+
+.mainheader button:hover {
+    box-shadow: 0 4px 14px 0 rgb(173, 215, 255), 0 16px 10px 0 rgba(50, 140, 251, 0.493);
+}
+
+/* Working on the NAV Bar  */
+
+/* Clearing floats */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* Mini reset, no margins, paddings or bullets */
+.menu,
+.submenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 1; 
+
+}
+
+/* Main level */
+.menu {			
+  margin: 50px auto;
+  width: 800px;
+  /* http://www.red-team-design.com/horizontal-centering-using-css-fit-content-value */
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;	
+}
+
+.menu > li {
+  background: #00000073;
+  float: left;
+  position: relative;
+  transform: skewX(25deg);
+  box-shadow: 1px 3px 10px rgb(255, 255, 255);
+  border-radius: 9px;
+
+
+}
+
+.menu a {
+  display: block;
+  color: #fff;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-family: Arial, Helvetica;
+  font-size: 15px;
+  font-weight: bold;
+  
+}		
+
+
+.menu li:hover {
+  text-decoration: none;
+  opacity: 1;
+  background-color: #177B70;
+  background-image: linear-gradient(62deg, #3ddbffc6 0%, #ffe251f4 100%);
+}		
+
+.menu li a:hover {color: black;}
+
+
+.menu > li:hover > ul {
+  display: block;
+}
+
+.menu > li > a {
+  transform: skewX(-25deg);
+  padding: 1em 2em;
+
+}
+
+/* Dropdown */
+.submenu {
+  position: absolute;
+  width: 200px;
+  left: 50%; margin-left: -100px;
+  transform: skewX(-25deg);
+  transform-origin: left top;
+  
+}
+
+.submenu li {
+  background-image: linear-gradient(62deg, #25afb6bb 0%, #b42dfd94 100%);
+  position: relative;
+  border-radius: 9px;		
+  overflow: hidden;	
+}						
+
+.submenu > li > a {
+  padding: 1em 2em;			
+}
+
+.submenu > li::after {
+  content: '';
+  position: absolute;
+  top: -125%;
+  height: 100%;
+  width: 100%;			
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.9);	
+}		
+
+/* Odd stuff */
+.submenu > li:nth-child(odd){
+  transform: skewX(-25deg) translateX(0);
+}
+
+.submenu > li:nth-child(odd) > a {
+  transform: skewX(25deg);
+}
+
+.submenu > li:nth-child(odd)::after {
+  right: -50%;
+  transform: skewX(-25deg) rotate(3deg);
+}				
+
+/* Even stuff */
+.submenu > li:nth-child(even){
+  transform: skewX(25deg) translateX(0);
+}
+
+.submenu > li:nth-child(even) > a {
+  transform: skewX(-25deg);
+}
+
+.submenu > li:nth-child(even)::after {
+  left: -50%;
+  transform: skewX(25deg) rotate(3deg);
+}
+
+/* Show dropdown */
+.submenu,
+.submenu li {
+  opacity: 0;
+  visibility: hidden;	
+  		
+}
+
+.submenu li {
+  transition: 0.3s ease-out transform;
+}
+
+.menu > li:hover .submenu,
+.menu > li:hover .submenu li {
+  opacity: 1;
+  visibility: visible;
+}		
+
+.menu > li:hover .submenu li:nth-child(even){
+  transform: skewX(25deg) translateX(15px);			
+}
+
+.menu > li:hover .submenu li:nth-child(odd){
+  transform: skewX(-25deg) translateX(-15px);			
+}
+
+
+/* Floating Card of Hero Title  */
+
+
+.FloatingCardCont
+{
+  /* position: relative; */
+  z-index: 1;
+  animation: title-animation 2.5s ease-in-out;
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: serif;
+  font-size: larger;
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.FloatingCardCont .box
+{
+  position: relative;
+  width: 380px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 30px;
+  transition: 0.5s;
+}
+
+.FloatingCardCont .box::before
+{
+  content:' ';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+}
+
+.FloatingCardCont .box::after
+{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 1s;
+  filter: blur(30px);
+}
+
+.FloatingCardCont .box:hover:before,
+.FloatingCardCont .box:hover:after
+{
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+  
+}
+
+.FloatingCardCont .box:nth-child(1):before,
+.FloatingCardCont .box:nth-child(1):after
+{
+  background: linear-gradient(315deg, #d6ac3a, #ff0058)
+}
+
+.FloatingCardCont .box:nth-child(2):before,
+.FloatingCardCont .box:nth-child(2):after
+{
+  background: linear-gradient(315deg, #03a9f4, #ff0058)
+}
+
+/* .FloatingCardCont .box:nth-child(3):before,
+.FloatingCardCont .box:nth-child(3):after
+{
+  background: linear-gradient(315deg, #3b9e10, #0d819b)
+} */
+
+.FloatingCardCont .box span
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.FloatingCardCont .box span::before
+{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.1s;  
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08)
+}
+
+.FloatingCardCont .box:hover span::before
+{
+  top: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+.FloatingCardCont .box span::after
+{
+  content:'';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  animation-delay: -1s;
+}
+
+.FloatingCardCont .box:hover span:after
+{
+  bottom: -50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+@keyframes animate
+{
+  0%, 100%
+  {
+    transform: translateY(10px);
+  }
+  
+  50%
+  {
+    transform: translate(-10px);
+  }
+}
+
+
+@keyframes title-animation {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+    filter: blur(3px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.FloatingCardCont .box .content
+{
+  position: relative;
+  left: 0;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transform: 0.8s;
+  color: #fff;
+}
+
+.FloatingCardCont .box:hover .content
+{
+  left: -25px;
+  padding: 60px 40px;
+}
+
+.FloatingCardCont .box .content h2
+{
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.FloatingCardCont .box .content p
+{
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+}
+
+.FloatingCardCont .box .content a
+{
+  display: inline-block;
+  font-size: 1.1em;
+  color: #111;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.FloatingCardCont .box .content a:hover
+{
+  background: #ffcf4d;
+  border: 1px solid rgba(255, 0, 88, 0.4);
+  box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
+}

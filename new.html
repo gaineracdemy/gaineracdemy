@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="new.css">
+</head>
+
+<body>
+  <div id="preloader"></div>
+
+  <header>
+    <div class="mainheader">
+        <div class="logo">
+            <!-- <img src="img/logo7 copy.png"> -->
+        </div>
+        <ul class="menu cf">
+          <li><a href="">Home</a></li>
+          <li>
+            <a href="">Student Corner</a>
+            <ul class="submenu">
+              <li><a href="">Notes</a></li>
+              <li><a href="">Video Lectures</a></li>
+              <li><a href="">Mock Tests</a></li>
+              <li><a href="">Events</a></li>
+              <li><a href="">Gallery</a></li>
+            </ul>			
+          </li>
+          <li><a href="">Job Requirement</a></li>
+          <li><a href="">Notifications</a></li>
+          <li><a href="">Contact Us</a></li>
+        </ul>
+        <div class="menubtn" >
+            <button >Registration</button>
+        </div> 
+</header>
+
+<div>
+  <form>
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname"><br>
+  
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" >
+  
+    <label for="phone">Phone No.:</label>
+    <input type="text" id="phone" name="phone" style="margin-left: 60px;">
+  
+    <label for="dob">Date of Birth</label>
+    <input type="text" id="dob" name="dob" style="margin-left: 30px;"><br><br>
+  
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    <input type="radio" id="prefernotsay" name="gender" value="prefer not to say">
+    <label for="prefernotsay">Prefer not to say</label><br><br>
+  
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address"><br><br>
+  
+    <label for="courses">Select Course:</label><br>
+    <div style="display:flex;">
+    <div style="flex:1;">
+    <input type="checkbox" id="primary" name="courses" value="Primary School Education (1th-5th)">
+    <label for="primary">Primary School Education (1th-5th)</label><br>
+    <input type="checkbox" id="middle" name="courses" value="Middle School Education (6th - 8th)">
+    <label for="middle">Middle School Education (6th - 8th)</label><br>
+    <input type="checkbox" id="secondary" name="courses" value="Secondary School Education (9th - 10th)">
+    <label for="secondary">Secondary School Education (9th - 10th)</label><br>
+    <input type="checkbox" id="seniorsecondary" name="courses" value="Senior Secondary School Education (11th - 12th)">
+    <label for="seniorsecondary">Senior Secondary School Education (11th - 12th)</label><br>
+    <input type="checkbox" id="jnv" name="courses" value="JNV (Jawahar Navodaya Vidyalaya)">
+    <label for="jnv">JNV (Jawahar Navodaya Vidyalaya)</label><br>
+    <input type="checkbox" id="nmms" name="courses" value="NMMS (National Means Cum-Merit Scholarship)">
+    <label for="nmms">NMMS (National Means Cum-Merit Scholarship)</label><br>
+    </div>
+    <div style="flex:1;">
+    <input type="checkbox" id="hau" name="courses" value="Haryana Agricultural University (HAU) Entrance">
+    <label for="hau">Haryana Agricultural University (HAU) Entrance</label><br>
+    <input type="checkbox" id="jobentrance" name="courses" value="Job Entrance (HSSC, SSC, Banking etc.)">
+    <label for="jobentrance">Job Entrance (HSSC, SSC, Banking etc.)</label><br>
+    <input type="checkbox" id="neet" name="courses" value="NEET (National Eligibility cum Entrance Test)">
+    <label for="neet">NEET (National Eligibility cum Entrance Test)</label><br>
+    <input type="checkbox" id="jee" name="courses" value="JEE (Joint Entrance Exam)">
+    <label for="jee">JEE (Joint Entrance Exam)</label><br>
+    <input type="checkbox" id="basiccomputer" name="courses" value="Basic Computer Courses">
+    <label for="basiccomputer">Basic Computer Courses</label><br>
+    <input type="checkbox" id="advancecomputer" name="courses" value="Advance Computer Courses">
+    <label for="advancecomputer">Advance Computer Courses</label><br>
+    
+      </div>
+      <div style="flex:1;">
+      <input type="checkbox" id="programminglanguages" name="courses" value="Programing Languages Courses">
+      <label for="programminglanguages">Programing Languages Courses</label><br>
+      <input type="checkbox" id="hacking" name="courses" value="Hacking Courses (Basic to Advance)">
+      <label for="hacking">Hacking Courses (Basic to Advance)</label><br>
+      <input type="checkbox" id="chess" name="courses" value="Competitive Chess Courses">
+      <label for="chess">Competitive Chess Courses</label><br>
+      <input type="checkbox" id="trading" name="courses" value="Advance Trading Courses (Stocks and Crypto)">
+      <label for="trading">Advance Trading Courses (Stocks and Crypto)</label><br>
+      </div>
+      </div>
+      <br>
+      <input type="submit" value="Submit">
+    </form> 
+    </div>
+    <div style = " margin-left:50%; justify-content: center; " class="card">
+      <input placeholder="Full Name" type="text" id="fullname" name="fullname"><br>
+
+    </div>
+    
+    <script>
+      window.addEventListener("load", function() {
+        const preloader = document.getElementById("preloader");
+        preloader.style.display = "none";
+      });
+    </script>  
+
+</body>
+
+</html>
+
+
+</body>
+
+
+</html>
