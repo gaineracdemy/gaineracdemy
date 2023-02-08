@@ -1,228 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Spectral:ital,wght@1,300&display=swap');
 
 
-* {
-    margin: 0;
-    pad: 0;
-    box-sizing: border-box;
-}
-
-#preloader{
-  background: #000 url('img/AtomGif.gif') no-repeat center center;
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  z-index: 100;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-}
-
 body {
-    width: 100%;
-    height: 100vh;
     background-image: url('img/registrationBg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    margin:0;
-    padding:0;
-    font-family: sans-serif;
 }
-
-
-.mainheader {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.mainheader .logo img {
-    filter: blur(0px); 
-    width: 100%;
-    height: 300px;
-    padding-left: 0px;
-    margin-top: 70px;
-    cursor: pointer;
-
-}
-
-.menubtn {
-    margin-right: 60px;
-}
-
-
-
-/* Working on the NAV Bar  */
-
-/* Clearing floats */
-.cf:before,
-.cf:after {
-  content: " ";
-  display: table;
-}
-
-.cf:after {
-  clear: both;
-}
-
-.cf {
-  *zoom: 1;
-}
-
-/* Mini reset, no margins, paddings or bullets */
-.menu,
-.submenu {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  z-index: 1; 
-
-}
-
-/* Main level */
-.menu {			
-  margin: 50px auto;
-  width: 800px;
-  /* http://www.red-team-design.com/horizontal-centering-using-css-fit-content-value */
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;	
-}
-
-.menu > li {
-  background: #00000073;
-  float: left;
-  position: relative;
-  transform: skewX(25deg);
-  box-shadow: 1px 3px 10px rgb(255, 255, 255);
-  border-radius: 9px;
-
-
-}
-
-.menu a {
-  display: block;
-  color: #fff;
-  text-transform: capitalize;
-  text-decoration: none;
-  font-family: Arial, Helvetica;
-  font-size: 15px;
-  font-weight: bold;
-  
-}		
-
 
 .menu li:hover {
-  text-decoration: none;
-  color: black;
-  opacity: 1;
   background-color: #00d9f6;
   background-image: linear-gradient(62deg, #6dffdf9a 0%, #98fc50b3 100%);
 }		
-.menu li a:hover {
-  color: black;
-}	
-.menu > li:hover > ul {
-  display: block;
-}
-
-.menu > li > a {
-  transform: skewX(-25deg);
-  padding: 1em 2em;
-
-}
-
-/* Dropdown */
-.submenu {
-  position: absolute;
-  width: 200px;
-  left: 50%; margin-left: -100px;
-  transform: skewX(-25deg);
-  transform-origin: left top; 
-}
-
 .submenu li {
   background-image: linear-gradient(62deg, #f9aa56d3 0%, #e2467c 100%);
-  position: relative;
-  border-radius: 9px;		
-  overflow: hidden;	
 }						
 
-.submenu > li > a {
-  padding: 1em 2em;			
-}
-
-.submenu > li::after {
-  content: '';
-  position: absolute;
-  top: -125%;
-  height: 100%;
-  width: 100%;			
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.9);	
-}		
-
-/* Odd stuff */
-.submenu > li:nth-child(odd){
-  transform: skewX(-25deg) translateX(0);
-}
-
-.submenu > li:nth-child(odd) > a {
-  transform: skewX(25deg);
-}
-
-.submenu > li:nth-child(odd)::after {
-  right: -50%;
-  transform: skewX(-25deg) rotate(3deg);
-}				
-
-/* Even stuff */
-.submenu > li:nth-child(even){
-  transform: skewX(25deg) translateX(0);
-}
-
-.submenu > li:nth-child(even) > a {
-  transform: skewX(-25deg);
-}
-
-.submenu > li:nth-child(even)::after {
-  left: -50%;
-  transform: skewX(25deg) rotate(3deg);
-}
-
-/* Show dropdown */
-.submenu,
-.submenu li {
-  opacity: 0;
-  visibility: hidden;	
-  		
-}
-
-.submenu li {
-  transition: 0.3s ease-out transform;
-}
-
-.menu > li:hover .submenu,
-.menu > li:hover .submenu li {
-  opacity: 1;
-  visibility: visible;
-}		
-
-.menu > li:hover .submenu li:nth-child(even){
-  transform: skewX(25deg) translateX(15px);			
-}
-
-.menu > li:hover .submenu li:nth-child(odd){
-  transform: skewX(-25deg) translateX(-15px);			
-}
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900%display=swap');
-
-html {
-  height: 100%;
-}
 
 
 .login-box {
@@ -492,8 +284,8 @@ html {
 }
 
 :root {
-  --card-height: 90vh;
-  --card-width: 50vh;
+  --card-height: 90em;
+  --card-width: 27em;
 }
 
 
@@ -507,11 +299,11 @@ html {
 }
 
 .card {
-  /* top: 10%; */
+  top: 10%;
   left: 50%;
   background: #0a0a0ac6;
   width: var(--card-width);
-  height: var(--card-height);
+  max-height: var(--card-height);
   padding: 30px;
   margin-left: 50px;
   position: relative;
