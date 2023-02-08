@@ -1,12 +1,13 @@
 
 
 body {
-  background-image: url('img/Bg1.png');
+  background-image: url('img/bg23.png');
+  
 }
 
 .FloatingCardCont
-{
-  /* position: relative; */
+{   
+  position: relative;
   z-index: 1;
   animation: title-animation 2.5s ease-in-out;
   margin: 10px;
@@ -16,7 +17,8 @@ body {
   font-size: larger;
   display: flex;
   justify-content: space-between;
-  min-height: 100vh;
+
+   /* min-height: 10vh;  */
   align-items: center;
   flex-wrap: wrap;
   padding: 40px 0;
@@ -32,7 +34,6 @@ body {
   align-items: center;
   margin: 40px 30px;
   transition: 0.5s;
-  margin-top: 100px;
 
 }
 

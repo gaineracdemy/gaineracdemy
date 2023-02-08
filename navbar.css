@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=PT+Serif:ital,wght@1,700&family=Spectral:ital,wght@1,300&display=swap');
+
+
 * {
     margin: 0;
     pad: 0;
@@ -8,7 +12,13 @@ body {
   width: 100%;
   height: 100vh;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
+  background-position: center;
+}
+
+footer{
+  width: 100%; position: relative; bottom: 0; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);
 }
 
 #checkbtn{
@@ -17,6 +27,7 @@ body {
   font-size: 30px;
   color: white;
   display: none;
+  cursor: pointer;
 }
 
 
@@ -27,17 +38,28 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
+    /* backdrop-filter: blur(10px); */
 }
 
 .mainheader .logo img {
     width: 100%;
     height: 200px;
-    padding-left: 0px;
-    margin-top: 70px;
+    margin-top: 4em;
     cursor: pointer;
+    
 }
 
+
+/* .logofont {
+  font-size: 2.5em; 
+  margin-top: 1em; 
+  font-family: 'PT Serif', serif;
+  color: white;
+  text-shadow: 0 0 2px white;
+  cursor: pointer;
+  filter: blur(.51px);
+  
+} */
 
 .mainheader button {
     padding: 10px 15px;
@@ -47,7 +69,8 @@ body {
     font-weight: 550;
     color: white;
     border: none;
-    background-image: linear-gradient(to right, #0070fa, #2888fe, #5d95ff);
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(to right, #64ffc1, #1eb0e1, #4cc2ca);
     border-radius: 15px;
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -55,7 +78,7 @@ body {
 }
 
 .mainheader button:hover {
-    box-shadow: 0 4px 14px 0 rgb(173, 215, 255), 0 16px 10px 0 rgba(50, 140, 251, 0.493);
+  box-shadow: 0 4px 14px 0 rgba(40, 230, 240, 0.92), 0 16px 10px 0 rgba(62, 126, 230, 0.495);
 }
 
 
@@ -79,26 +102,22 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
-  z-index: 1; 
+  z-index: 5; 
+  
 
 }
 
-/* Main level */
-.menu {			
-  margin: 50px auto;
-  width: 800px;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;	
-}
+
 
 .menu > li {
   background: #00000073;
   float: left;
-  position: relative;
+  position: static;
   transform: skewX(25deg);
   box-shadow: 1px 3px 10px rgb(255, 255, 255);
   border-radius: 9px;
+  z-index: 10; 
+
 }
 
 .menu a {
@@ -109,8 +128,6 @@ body {
   font-family: Arial, Helvetica;
   font-size: 14px;
   font-weight: bold;
-
-  
 }		
 
 .menu li:hover {
@@ -118,11 +135,10 @@ body {
   opacity: 1;
   background-color: #177B70;
   background-image: linear-gradient(62deg, #3ddbffc6 0%, #ffe251f4 100%);
-  z-index: 10; 
 
 }		
 
-.menu li a:hover {color: black;}
+.menu li a:hover {color: black; }
 
 
 .menu > li:hover > ul {
@@ -133,7 +149,7 @@ body {
 .menu > li > a {
   transform: skewX(-25deg);
   padding: 0.85em 1.5em;
-
+  z-index: 10; 
 }
 
 /* Dropdown */
@@ -143,6 +159,7 @@ body {
   left: 50%; margin-left: -100px;
   transform: skewX(-25deg);
   transform-origin: left top;
+
   
 }
 
@@ -151,6 +168,7 @@ body {
   position: relative;
   border-radius: 9px;		
   overflow: hidden;	
+
 
 }						
 
@@ -235,28 +253,50 @@ body {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 }
-
-@media(max-width: 520px){
+#foot {
+  width: 100%; 
+  position: relative; 
+  bottom: 100;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(10px);
+}
+/* Media Queries */
+@media screen and (max-width: 915px) {
+  .mainheader .logo img {
+    width: 100%;
+    height: 180px;
+    margin-top: 0em;
+    cursor: pointer;
+    }
+  
+  #checkbtn{text-align: center; display: block; margin-top: 5%; text-shadow: 0 0 2px white;}
   .menu{
-    margin-top: 250px;
+    display: inline;
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    height: 100px;
+    float: right;
+
+
   }
-}
+  .mainheader {
 
-/* 
-#check:checked ~ .menu{
-  margin-top: 250px;
-}
+    display: inline;
+    justify-content: normal;
+    align-items: stretch;
+    }
+    .menu > ul {
+      background: #00000073;
+      float: center;
+      position: fixed;
+      align-items: center;
+      display: block;
+      width: 100%;
+      height: 100px;
+      transform: skewX(25deg);
+      box-shadow: 1px 3px 10px rgb(255, 255, 255);
+      border-radius: 9px;
+    }
+  }
 
-#check:checked ~ .menu > li {
-  background: #00000073;
-  position: relative;
-  transform: skewX(25deg);
-  box-shadow: 1px 3px 10px rgb(245, 242, 242);
-  border-radius: 9px;
-}
-
-
-#check:checked ~.FloatingCardCont .box
-{
-  margin-top: 1000px;
-} */
