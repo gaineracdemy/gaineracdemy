@@ -35,6 +35,310 @@ body {
   
 @keyframes shine {to {background-position: 200% center;}}
 
+/* Course Details Here */
+
+/* body {
+	margin:0;
+	padding:0;
+	font-family:"helvetica neue", arial, sans-serif;
+	font-weight:400;
+	background-color:#eee;
+	transition:all 0.4s;
+	height:150vh;
+	background-image:url("https://picsum.photos/1400/900?random=10");
+	background-size:100vw 100vh;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	
+} */
+/* body::after {
+	pointer-events:none;
+	background-color:rgba(250,250,250,0.4);
+	width:100vw;
+	height:100vh;
+	display:block;
+	content: "";
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:-1;
+} */
+
+/* a, a::after, a::before {
+	text-decoration:none;
+	transition: all 4.0s;
+} */
+
+#containerCourse  {
+	display:grid;
+	grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+	grid-gap:30px;
+	list-style:none;
+	margin:0;
+	padding:4vh;
+  	margin-top: 100px;
+}
+
+.card {
+	position:relative;
+	border-radius:20px;
+	transition: all 0.4s;
+	
+}
+
+.card:hover img, .card:hover .preview{
+	box-shadow: 0 0 20px rgb(255, 30, 248);
+	transition:all 0.4s,box-shadow 0.4s;
+	cursor: pointer;
+}
+
+#containerCourse img {
+	border-radius:20px 20px 0 0;
+	width:100%;
+	height:25vh;
+	object-fit:cover;
+	box-shadow:0px 0px 3px 1px rgba(0,0,0,0.2);
+}
+
+/* .card:nth-child(3n) img {
+	background-color: #A5CEBA
+;
+}
+
+.card:nth-child(3n - 2) img {
+	background-color: #8FBAA5
+;
+}
+
+.card:nth-child(3n - 1) img {
+	background-color: #B8E0CD;
+}  */
+
+.thumbnail {
+	margin-bottom:-5px;
+	max-width:100%;
+	height:18vh;
+	width:100%;
+	object-fit:cover;
+	object-position:center center;
+	background-color: rgba(108, 111, 109, 0.423);
+}
+
+.preview {
+	background-color:#ffffff;
+	padding:0;
+	margin:0;
+	box-shadow:0px 0px 3px 1px rgba(0,0,0,0.2);
+	border-radius:0 0 20px 20px;
+	position:relative;
+	height:100px;
+	min-height:6em;
+	max-height:18vh;
+	display:flex;
+	flex-flow:column nowrap;
+	transition: all 0.4s, max-height 0.4s;
+}
+
+.preview p {
+	font-size:0.85em;
+	font-weight: 500;
+	display:block;
+	flex:1 1 auto;
+	margin:1px;
+	padding:0.3em 0.7em 0.7em 0.7em;
+	z-index:0;
+	overflow:hidden;
+	border-radius:0 20px;
+	transition:all 0.3s;
+}
+
+.preview::after {
+	content: " ";
+	display:block;
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,1) 100%);
+	background: -webkit-linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,1) 100%);
+	background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+	position:absolute;
+	top:0;
+	border-radius:0 0 20px 20px;
+	left:0;
+	z-index:1;
+	width:100%;
+	height:100%;
+}
+
+.preview > a {
+	text-shadow:0px 0px 2px #fff,0px 0px 5px #fff;
+	position:absolute;
+	z-index:8;
+	bottom:0;
+	left:0;
+	display:block;
+	text-align:center;
+	width:100%;
+	box-sizing:border-box;
+	padding:0.2rem;
+	color:#14b840;
+	text-decoration:none;
+	font-weight:700;
+	font-size:0.8em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	opacity:0.7;
+}
+
+.preview > a:hover {
+	opacity:1;
+}
+
+h2 a{
+	color:#777;
+	border-top:5px solid #ddd;
+	border-bottom:5px solid #ddd;
+	font-size:1.2rem;
+	display:block;
+	padding:0.2rem 10px;
+	box-shadow:0px 0px 3px 1px rgba(0,0,0,0.3), inset 0 -2px 1px -1px #aaa;
+	margin:0 -7px 7px -7px;
+	z-index:4;
+	position:relative;
+	background-color:#fff;
+	font-weight:500;
+	border:none;
+	padding:10px;
+}
 
 
 
+h2 a:hover {
+	margin:0 -10px 10px -10px;
+	padding:10px 13px;
+	color:#555;
+	box-shadow:0px 0px 5px 1px rgba(0,0,0,0.3);
+	letter-spacing:0.02em;
+}
+
+h2 a::before {
+	content: " ";
+	display:block;
+	position:absolute;
+	bottom:100%;
+	height:25vh;
+	width:100%;
+}
+
+h2 a::after {
+	content: " ";
+	box-sizing:border-box;
+	display:block;
+	position:absolute;
+	top:100%;
+	left:0;
+	width:100%;
+	border:7px rgba(0,0,0,0.5) solid;
+	border-color:rgba(0,0,0,0.3) transparent transparent transparent;
+	border-bottom:none;
+	border-radius: 20%;
+	height:0px;
+	z-index:-5;
+}
+
+h2 a:hover::after {
+	border-width:7px 10px 0 10px;
+}
+
+.cat-links {
+	position:absolute;
+	top:7px;
+	right: 10px;
+	text-align:center;
+}
+
+.cat-links a {
+	color:#000000;
+	background-color:#fff;
+	padding:2px 10px;
+	display:inline-block;
+	font-size:0.7em;
+	font-weight:700;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	border-radius:20px;
+}
+
+.potato {
+	height:auto;
+	max-height:800px;
+	transition: all 0.6s, max-height 0.6s;
+	padding-bottom:25px;
+}
+
+.potato::After {
+	content:none;}
+
+
+.potato p {
+	transition: all 0.6s;
+	overflow:scroll;
+}
+
+.potato > a {
+	border-top:#ddd solid 1px;
+	color:#bbb;
+}
+
+.moremore {
+	display:none;
+	font-style:italic;
+	color:#14b840;
+	font-weight:700;
+	opacity:0.7;
+	transition: all 0.2s;
+}
+
+.moremore:hover {
+	opacity:1;
+}
+
+.potato .moremore {
+	display:inline;
+}
+
+
+
+/* Fee Structure Designing */
+table {
+	margin-left: 5px;
+	border-collapse: collapse;
+	width: 97%;
+	overflow: hidden;
+  }
+  
+  th, td {
+	border: 1px solid black;
+	padding: 8px;
+	text-align: left;
+	overflow: hidden;
+	z-index: 0;
+
+  }
+  
+  .discount {
+	text-decoration: line-through;
+	color: red;
+  }
+  
+.feeAnnual{
+	color: #6e14b8;
+}
+.feeMonthly{
+	color: #b84014;
+}
+.feeQuaterly{
+	color: #14b5b8;
+}
+.feeHalf{
+	color: #1435b8;
+}
